@@ -38,10 +38,18 @@ function calculateRentalCost(days, carType, insurance = false)//function that ca
     console.log(calculateRentalCost(5, "Luxury", false)); // test data that should produce: "Total Rental Cost: $500"
 
 //Task 5: Loan Payment Calculation 
-function calculateLoanPayment(principal, rate, time)
+function calculateLoanPayment(principal, rate, time) //function that will calculate the total loan payment
     {
         let totalPayment = (principal + principal * rate * time)
         return `Total Payment: $${totalPayment.toFixed(2)}`; //method that will set the number value to two decimal places
     };
 console.log(calculateLoanPayment(1000, 0.05, 2)); //test data that should produce "Total Payment: $1100.00"
 console.log(calculateLoanPayment(5000, 0.07, 3)); //test data that should produce "Total Payment: $6050.00"
+
+//Task 6: Identifying Large Transactions 
+let transactions = [200, 1500, 3200, 800, 2500]; //declared an array with multiple values 
+const filterLargeTransactions = (transactions, filterFunction) => //function that will help find transactions larger than $1000
+    {
+         return transactions.filter(filterFunction);
+    };
+console.log(filterLargeTransactions(transactions, amount => amount > 1000)); //test data that should produce [1500, 3200,2500]
