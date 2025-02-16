@@ -16,3 +16,13 @@ const calculateDiscount = function(price, discountRate) //declaring a function
 console.log(calculateDiscount(100, 0.2)); //test data that should produce: "Final Price: $80.00"
 console.log(calculateDiscount(250, 0.15)); //test data that should produce: "Final Price: $212.50"
 
+// Task 3: Arrow Function
+
+const calculateServiceFee = (amount, serviceType) => 
+    {
+        let feeRate = serviceType === "Premium" ? 0.15 : serviceType === "Standard" ? 0.10 : serviceType === "Basic" ? 0.05 : 0;
+        let serviceFee = amount * feeRate;
+        return `Service Fee: $${serviceFee.toFixed(2)}`;
+    };
+console.log(calculateServiceFee(200, "Premium"));  // Expected output: "Service Fee: $30.00"
+console.log(calculateServiceFee(500, "Standard")); // Expected output: "Service Fee: $50.00"
