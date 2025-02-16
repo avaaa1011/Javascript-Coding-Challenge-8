@@ -67,3 +67,15 @@ function createCartTracker()
     let cart = createCartTracker();
     console.log(cart(20)); // test data that should produce: "Total Cart Value: $20"
     console.log(cart(35)); // test data that should produce: "Total Cart Value: $55"
+
+//Task 8: Savings Growth Projection
+function calculateSavings(years, amount) 
+{//recursive function that will call itself to help predict savings growth
+    if (years === 0 || years > 10) 
+    {
+        return `Projected Savings: $${amount.toFixed(2)}`;
+    }
+        return calculateSavings(years - 1, amount * 1.05); //savings are increasing by 5% each year until Year 10
+}
+console.log(calculateSavings(8, 1000));  // test data that should produce: "Projected Savings: $1102.50"
+console.log(calculateSavings(5, 5000));  // test data that should produce:"Projected Savings: $6381.41"
