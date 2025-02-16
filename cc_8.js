@@ -36,3 +36,12 @@ function calculateRentalCost(days, carType, insurance = false)//function that ca
     }
     console.log(calculateRentalCost(3, "Economy", true)); // test data that should produce: "Total Rental Cost: $180"
     console.log(calculateRentalCost(5, "Luxury", false)); // test data that should produce: "Total Rental Cost: $500"
+
+//Task 5: Loan Payment Calculation 
+function calculateLoanPayment(principal, rate, time)
+    {
+        let totalPayment = (principal + principal * rate * time)
+        return `Total Payment: $${totalPayment.toFixed(2)}`; //method that will set the number value to two decimal places
+    };
+console.log(calculateLoanPayment(1000, 0.05, 2)); //test data that should produce "Total Payment: $1100.00"
+console.log(calculateLoanPayment(5000, 0.07, 3)); //test data that should produce "Total Payment: $6050.00"
